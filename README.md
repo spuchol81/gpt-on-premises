@@ -1,1 +1,1 @@
-# gpt-on-premises
+# privateGPT Client
