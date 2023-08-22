@@ -26,7 +26,7 @@ export default function MainContainer() {
       setChat((chat) => [...chat, { isBot: false, msg: question }]);
       setQuestion("");
       try {
-        const response = await fetch("http://gpt-on-premises-server.default:5000/get_answer", {
+        const response = await fetch("https://gpt-on-premises-server-default.tanzu.aks.spuchol.me/get_answer", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
