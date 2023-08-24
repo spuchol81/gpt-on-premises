@@ -12,7 +12,7 @@ export default function ConfigSideNav() {
   const ingestData = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch("http://gpt-on-premises-server-default.tanzu.aks.spuchol.me/ingest");
+      const res = await fetch("https://gpt-on-premises-server-default.tanzu.aks.spuchol.me/ingest");
       const jsonData = await res.json();
       if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
@@ -31,7 +31,7 @@ export default function ConfigSideNav() {
   const handleDownloadModel = async () => {
     try {
       setdownloadInProgress(true);
-      const res = await fetch("http://gpt-on-premises-server-default.tanzu.aks.spuchol.me/download_model");
+      const res = await fetch("https://gpt-on-premises-server-default.tanzu.aks.spuchol.me/download_model");
       const jsonData = await res.json();
       if (!res.ok) {
 	    response.text().then(text => {toast.error("Error downloading model."+text);})  
@@ -61,7 +61,7 @@ export default function ConfigSideNav() {
       const formData = new FormData();
       formData.append("document", selectedFile);
 
-      const res = await fetch("http://gpt-on-premises-server-default.tanzu.aks.spuchol.me/upload_doc", {
+      const res = await fetch("https://gpt-on-premises-server-default.tanzu.aks.spuchol.me/upload_doc", {
         method: "POST",
         body: formData,
       });
